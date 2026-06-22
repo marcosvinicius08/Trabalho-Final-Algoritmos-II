@@ -1,5 +1,5 @@
 #include <stdio.h>
-void ordenavetor(int **vptr,int n){
+void ordenaponteiros(int **vptr,int n){
     int **x;
      x = vptr + n - 1;
     
@@ -26,17 +26,22 @@ void ordenavetor(int **vptr,int n){
 int main(){
     int n=5,v[5];
     int *vptr[5];
+    int *p = v;
+    int **pp = vptr;
     printf("Informe os valores do vetor:");
-    for(int i =0;i<5;i++){
-         scanf(" %d",&v[i]);
-         vptr[i] = &v[i];
+    while(p < v + n){
+         scanf(" %d",p);
+         *pp = p;
+         p++;
+         pp++;
+         
     }  
-    ordenavetor(vptr,n);
+    ordenaponteiros(vptr,n);
     printf("vetor reogarnizado");
-    for (int i = 0; i < 5; i++)
-    {
-        printf("%d ",*(vptr[i]));
-       
+    pp = vptr;
+    while (pp < vptr + n) {
+        printf("%d ", **pp);
+        pp++;
     }
      
     
