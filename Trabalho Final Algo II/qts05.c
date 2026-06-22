@@ -41,7 +41,7 @@ int main(){
     {
         printf("informe um número inteiro e positivo ");
         scanf(" %d",&n);
-    } while (n>100000 || n < 1);
+    } while (n>1000000 || n < 1);
    tamanhoCollatz(n,&maior,&n_maior);
    printf("maior sequencia %d \n n %d",maior,n_maior);
 
